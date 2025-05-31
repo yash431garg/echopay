@@ -10,9 +10,13 @@
   },
   "dependencies": {
     "@farcaster/frame-sdk": "^0.0.53",
+    "@farcaster/frame-wagmi-connector": "^0.0.42",
+    "@reown/appkit": "^1.7.7",
+    "@reown/appkit-adapter-wagmi": "^1.7.7",
     "next": "15.3.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "wagmi": "^2.15.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
