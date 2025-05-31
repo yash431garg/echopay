@@ -4,7 +4,6 @@ import { useMiniAppContext } from "../hooks/useMiniAppContext";
 
 export function User() {
     const { context } = useMiniAppContext();
-    console.log(context)
 
     return (
         <div className="space-y-4 border border-[#333] rounded-md p-4">

@@ -1,8 +1,5 @@
-import Image from "next/image";
-import HomeComponent from "@/app/components/Home";
-import { useMiniAppContext } from "./hooks/useMiniAppContext";
+
 import { SafeAreaContainer } from "./components/safe-area-container";
-import dynamic from "next/dynamic";
 import HomeContainer from "@/app/components/Home";
 import { Metadata } from "next";
 
@@ -41,10 +38,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 
 export default function Home() {
-  const { context } = useMiniAppContext();
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <SafeAreaContainer insets={context?.client.safeAreaInsets}>
+      <SafeAreaContainer>
         <HomeContainer />
       </SafeAreaContainer>
     </div>

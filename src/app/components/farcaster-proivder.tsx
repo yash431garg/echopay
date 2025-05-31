@@ -25,6 +25,7 @@ const FrameProviderContext = createContext<FrameContextValue | undefined>(
 
 export function useFrame() {
     const context = useContext(FrameProviderContext);
+    console.log(context, 'c')
     if (context === undefined) {
         throw new Error("useFrame must be used within a FrameProvider");
     }
@@ -47,6 +48,7 @@ export function FrameProvider({ children }: FrameProviderProps) {
         const load = async () => {
             try {
                 const context = await sdk.context;
+                console.log(context, 'c,c')
                 if (context) {
                     setContext(context as FrameContext);
                     setActions(sdk.actions);

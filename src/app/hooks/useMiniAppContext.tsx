@@ -1,3 +1,4 @@
+
 import { useFrame } from "@/app/components/farcaster-proivder";
 import { FrameContext } from "@farcaster/frame-core/dist/context";
 import sdk from "@farcaster/frame-sdk";
@@ -23,7 +24,6 @@ export const useMiniAppContext = (): ContextResult => {
     // Try to get Farcaster context
     try {
         const farcasterContext = useFrame();
-        console.log(farcasterContext, 'c')
         if (farcasterContext.context) {
             return {
                 context: farcasterContext.context,
@@ -32,6 +32,7 @@ export const useMiniAppContext = (): ContextResult => {
             } as FarcasterContextResult;
         }
     } catch (e) {
+        console.log(e)
         // Ignore error if not in Farcaster context
     }
 

@@ -1,6 +1,8 @@
 "use client";
 
+import { FarcasterActions } from "./FarcasterAction";
 import { User } from "./User";
+import { WalletActions } from "./WalletActions";
 
 
 
@@ -12,8 +14,8 @@ export default function Main() {
             </h1>
             <div className="w-full max-w-4xl space-y-6">
                 <User />
-                {/*  <FarcasterActions />
-                <WalletActions /> */}
+                <FarcasterActions />
+                <WalletActions />
             </div>
         </div>
     );
