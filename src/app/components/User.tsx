@@ -1,51 +1,24 @@
-import { useMiniAppContext } from "../hooks/useMiniAppContext";
+"use client"
 
+import { useState } from "react"
 
-
-export function User() {
-    const { context } = useMiniAppContext();
-    console.log(context)
+export const User = () => {
+    const [userAddress, setUserAddress] = useState<string>("")
 
     return (
-        <div className="space-y-4 border border-[#333] rounded-md p-4">
-            <h2 className="text-xl font-bold text-left">sdk.context</h2>
-            <div className="flex flex-row space-x-4 justify-start items-start">
-                {context?.user ? (
-                    <>
-                        {context?.user?.pfpUrl && (
-                            <img
-                                src={context?.user?.pfpUrl}
-                                className="w-14 h-14 rounded-full"
-                                alt="User Profile Picture"
-                                width={56}
-                                height={56}
-                            />
-                        )}
-                        <div className="flex flex-col justify-start items-start space-y-2">
-                            <p className="text-sm text-left">
-                                user.displayName:{" "}
-                                <span className="bg-white font-mono text-black rounded-md p-[4px]">
-                                    {context?.user?.displayName}
-                                </span>
-                            </p>
-                            <p className="text-sm text-left">
-                                user.username:{" "}
-                                <span className="bg-white font-mono text-black rounded-md p-[4px]">
-                                    {context?.user?.username}
-                                </span>
-                            </p>
-                            <p className="text-sm text-left">
-                                user.fid:{" "}
-                                <span className="bg-white font-mono text-black rounded-md p-[4px]">
-                                    {context?.user?.fid}
-                                </span>
-                            </p>
-                        </div>
-                    </>
-                ) : (
-                    <p className="text-sm text-left">User context not available</p>
-                )}
+        <div className="flex items-center gap-3">
+            <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#4066E0] to-[#834EE3] rounded-full blur-md opacity-25"></div>
+                <div className="relative w-10 h-10 rounded-full bg-gradient-to-br from-[#4066E0]/90 to-[#834EE3]/90 backdrop-blur-sm flex items-center justify-center text-white font-medium border border-white/20">
+                    ?
+                </div>
+            </div>
+            <div>
+                <p className="text-xs font-medium text-gray-500">Connected Account</p>
+                <p className="text-[#4066E0] font-medium tracking-wide text-sm">
+                    Not Connected
+                </p>
             </div>
         </div>
-    );
+    )
 }
