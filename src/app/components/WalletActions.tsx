@@ -1,4 +1,4 @@
-
+import { useMiniAppContext } from "../hooks/useMiniAppContext";
 import { parseEther } from "viem";
 import { monadTestnet } from "viem/chains";
 import {
@@ -9,7 +9,6 @@ import {
     useSwitchChain,
 } from "wagmi";
 import { farcasterFrame } from "@farcaster/frame-wagmi-connector";
-import { useMiniAppContext } from "../hooks/useMiniAppContext";
 
 export function WalletActions() {
     const { isEthProviderAvailable } = useMiniAppContext();
