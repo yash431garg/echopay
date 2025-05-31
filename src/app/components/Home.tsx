@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { sdk } from '@farcaster/frame-sdk'
 import dynamic from 'next/dynamic';
 
